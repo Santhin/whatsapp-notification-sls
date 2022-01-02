@@ -1,46 +1,37 @@
 # Project Title
 
-## Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Usage](#usage)
-- [Contributing](../CONTRIBUTING.md)
 
-## About <a name = "about"></a>
-
-Write about 1-2 paragraphs describing the purpose of your project.
-
-## Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
+## Versions
 ```
-Give examples
+node --version
+v16.11.1
+
+npm --version
+8.0.0
+
+aws --version
+aws-cli/1.22.17 Python/3.8.12 Linux/5.10.16.3-microsoft-standard-WSL2 botocore/1.23.17
+
+sls --version
+Framework Core: 2.63.0
+Plugin: 5.5.0
+SDK: 4.3.0
+Components: 3.17.1
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
 ```
-Give the example
+❯ sls invoke -f hello
+{
+    "statusCode": 200,
+    "body": "{\n  \"message\": \"Go Serverless v1.0! Your function executed successfully!\",\n  \"input\": {}\n}"
+}
 ```
 
-And repeat
-
+## Project structure
 ```
-until finished
+.
+├── README.md
+├── handler.js
+└── serverless.yml
 ```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## Usage <a name = "usage"></a>
-
-Add notes about how to use the system.
