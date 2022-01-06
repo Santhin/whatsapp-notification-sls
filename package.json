@@ -1,0 +1,28 @@
+{
+  "name": "whatsapp-sls-lp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Santhin/whatsapp-notification-sls.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Santhin/whatsapp-notification-sls/issues"
+  },
+  "homepage": "https://github.com/Santhin/whatsapp-notification-sls#readme",
+  "devDependencies": {
+    "serverless-offline": "^8.3.1",
+    "serverless-webpack": "^5.6.0"
+  },
+  "dependencies": {
+    "http-status": "^1.5.0",
+    "joi": "^17.5.0",
+    "uuid": "^8.3.2"
+  }
+}
