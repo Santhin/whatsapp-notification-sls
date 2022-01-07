@@ -1,6 +1,8 @@
+const { successResponse, failureResponse } = require('../common/ApiResponse')
 const templateSchema = require('../common/TemplateSchema')
-const Response = require('../common/ApiResponse');
+// const Response = require('../common/ApiResponse');
 const Dynamo = require('../common/Dynamo');
+const status = require('http-status');
 const uuid = require('uuid');
 
 
@@ -30,14 +32,14 @@ exports.handler = async event => {
             console.log('params', params);
 
             await Dynamo.put(params);
-            return Response.__200(params.Item)
+            return successResponse(status.CREATED, params.Item)
         }
 
 
-        return Response.__400(error)
+        return failureResponse(status.BAD_REQUEST, error)
 
     }
     catch (error) {
-        return Response.__400({ err: error })
+        return failureResponse(status.BAD_REQUEST, error)
     }
 };
