@@ -4,6 +4,7 @@ const TemplateSchema = Joi.object({
     user_id: Joi.string().required(),
     template_name: Joi.string().required(),
     template_message: Joi.string().required(),
+    idempotent_key: Joi.string().required(),
 })
 
 
