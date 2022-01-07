@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Santhin/whatsapp-notification-sls#readme",
   "devDependencies": {
+    "serverless-dynamodb-local": "^0.2.40",
     "serverless-offline": "^8.3.1",
     "serverless-webpack": "^5.6.0"
   },

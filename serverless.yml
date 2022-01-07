@@ -10,11 +10,23 @@ provider:
   lambdaHashingVersion: 20201221
   profile: sls-user
   region: eu-central-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - "Fn::GetAtt": [DynamoTemplatesTable, Arn]
   environment:
     tableName: ${self:custom.tableName}
 
-# package:
-#   individually: true
+package:
+  individually: true
 
 custom:
   tableName: Templates
@@ -24,13 +36,13 @@ functions:
     handler: lambdas/handlers/createTemplate.handler
     events:
       - httpApi:
-          method: POST
+          method: post
           path: /templates
 
 
 resources:
   Resources:
-    MyDynamoDbTable:
+    DynamoTemplatesTable:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: ${self:custom.tableName}
@@ -48,5 +60,5 @@ resources:
 
 
 plugins:
-  # - serverless-webpack
-  - serverless-offline
+  - serverless-webpack
+  # - serverless-offline
